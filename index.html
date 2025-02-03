@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Comparison Tool</title>
+<link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Text Comparison Tool</h1>
+            <p>Compare text from images with your input text</p>
+        </div>
+
+        <div class="comparison-wrapper">
+            <div class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Source Document</h2>
+                    <span id="uploadStatus">No file selected</span>
+                </div>
+
+                <div id="errorMessage"></div>
+
+                <div class="upload-zone" id="uploadZone">
+                    <p>Drop your file here or click to upload</p>
+                    <p style="font-size: 0.9em; color: #6b7280; margin-top: 8px;">
+                        Supports images (PNG, JPG) and text files
+                    </p>
+                    <input type="file" id="fileInput" accept="image/*,.txt" style="display: none;">
+                </div>
+
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar">
+                        <div class="progress" id="progressBar"></div>
+                    </div>
+                    <div class="status" id="progressStatus">Processing...</div>
+                </div>
+
+                <div class="preview-area">
+                    <img id="imagePreview" alt="Document Preview">
+                </div>
+
+                <div class="extracted-text" id="extractedText">
+                    <span class="extracted-text-placeholder">Extracted text will appear here</span>
+                </div>
+
+                <button class="copy-button" id="copyButton" onclick="copyText()">Copy Extracted Text</button>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Text Input</h2>
+                    <button class="button" onclick="compareTexts()">Compare Texts</button>
+                </div>
+
+                <div class="input-area">
+                    <textarea id="userInput" 
+                        placeholder="Enter the text you want to compare with the source document..."></textarea>
+
+                    <div id="comparisonResults" class="comparison-results"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="scipt.js"></script>
+</body>
+</html>
